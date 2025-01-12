@@ -73,7 +73,7 @@ const DataTable = <T extends { isEditable?: boolean }>({
                                               key.charAt(0).toUpperCase() +
                                               key.slice(1)
                                       )
-                                      .map((colName, index) => {
+                                      .map((colName, idx) => {
                                           if (
                                               skipColumns.some(
                                                   (item) =>
@@ -83,7 +83,7 @@ const DataTable = <T extends { isEditable?: boolean }>({
                                           )
                                               return <></>;
                                           return (
-                                              <th scope="col" key={index}>
+                                              <th scope="col" key={idx}>
                                                   <span
                                                       className={classNames(
                                                           Styles.tableHeader
@@ -109,8 +109,13 @@ const DataTable = <T extends { isEditable?: boolean }>({
                             )}
                         </tr>
                     </thead>
-                    <tbody className={viewOnly ? Styles.disable : ""}>
-                        {data.map((val, i) => {
+                    <tbody
+                        className={classNames(
+                            viewOnly ? Styles.disable : "",
+                            Styles.tableBody
+                        )}
+                    >
+                        {data.map((val, id) => {
                             const rowData = skipColumns.length
                                 ? Object.entries(val)
                                       .filter(
@@ -123,9 +128,20 @@ const DataTable = <T extends { isEditable?: boolean }>({
                             const disableAction = !val.isEditable;
 
                             return (
-                                <tr key={i}>
+                                <tr key={id}>
                                     {rowData.map((rval, index) => {
-                                        return <td key={index}>{rval}</td>;
+                                        return (
+                                            <td
+                                                className={
+                                                    disableAction
+                                                        ? Styles.rowDataDisabled
+                                                        : ""
+                                                }
+                                                key={index}
+                                            >
+                                                {rval}
+                                            </td>
+                                        );
                                     })}
                                     {enableActions ? (
                                         <td>
@@ -167,9 +183,7 @@ const DataTable = <T extends { isEditable?: boolean }>({
                                                     width={15}
                                                     svgfillcolor="red"
                                                     onClick={() =>
-                                                        disableAction
-                                                            ? {}
-                                                            : onClickDelete(val)
+                                                        onClickDelete(val)
                                                     }
                                                 >
                                                     <DeleteIcon />

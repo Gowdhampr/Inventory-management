@@ -9,6 +9,10 @@ import { StatsCard } from "../../components/stats-card/StatsCard";
 
 //Asset
 import { ReactComponent as CartIcon } from "../../assets/cart.svg";
+import { ReactComponent as DollarIcon } from "../../assets/dollar.svg";
+import { ReactComponent as OutOfStockIcon } from "../../assets/out-of-stock.svg";
+import { ReactComponent as CategoryIcon } from "../../assets/category-icon.svg";
+
 import { formatNumber } from "../../methods/formatNumber";
 import DataTable from "../../components/data-table/DataTable";
 import classNames from "classnames";
@@ -22,6 +26,7 @@ import {
 import { AppDispatch, RootState } from "../../store";
 import { InventoryListType } from "../../store/types";
 import InventoryEditForm from "./inner-components/InventoryEditForm/InventoryEditForm";
+import IconWrapper from "../../components/IconWrapper/IconWrapper";
 
 const InventoryListPage = () => {
     const [showEditModal, setShowEditModal] = useState(false);
@@ -79,22 +84,39 @@ const InventoryListPage = () => {
             {
                 label: "Total products",
                 count: accumulatedData.total_products_available,
-                icon: <CartIcon />,
+                icon: (
+                    <IconWrapper width={20} height={20}>
+                        <CartIcon />
+                    </IconWrapper>
+                ),
             },
             {
                 label: "Total store value",
                 count: formatNumber(accumulatedData.total_store_value),
-                icon: <CartIcon />,
+                icon: (
+                    <IconWrapper width={20} height={20}>
+                        {" "}
+                        <DollarIcon />
+                    </IconWrapper>
+                ),
             },
             {
                 label: "Out of stocks",
                 count: accumulatedData.products_not_available,
-                icon: <CartIcon />,
+                icon: (
+                    <IconWrapper width={20} height={20}>
+                        <OutOfStockIcon />
+                    </IconWrapper>
+                ),
             },
             {
                 label: "No of Category",
                 count: accumulatedData.categories.length,
-                icon: <CartIcon />,
+                icon: (
+                    <IconWrapper width={20} height={20}>
+                        <CategoryIcon />
+                    </IconWrapper>
+                ),
             },
         ];
     }, [items]);

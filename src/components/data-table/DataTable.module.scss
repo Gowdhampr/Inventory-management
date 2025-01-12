@@ -3,6 +3,11 @@
     border-radius: 8px !important;
 
     .dataTable {
+        .tableBody {
+            .rowDataDisabled {
+                color: grey;
+            }
+        }
         .disable {
             filter: grayscale(1);
             pointer-events: none;

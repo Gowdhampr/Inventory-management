@@ -6,14 +6,12 @@
     gap: 10px;
     color: white;
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     width: 100%;
     max-width: 350px;
 
     .iconWrapper {
         svg {
-            width: 30px;
-            height: auto;
             path {
                 fill: #ffffff;
             }
@@ -30,7 +28,7 @@
         }
 
         .StatCount {
-            font-size: 44px;
+            font-size: 35px;
         }
     }
 }
