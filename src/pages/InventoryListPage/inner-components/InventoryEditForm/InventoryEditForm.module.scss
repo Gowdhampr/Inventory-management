@@ -1,0 +1,59 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    padding-top: 30px;
+
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+
+        .titleContainer {
+            h6 {
+                color: #8f918f;
+                margin-bottom: 0;
+            }
+        }
+
+        .closeBtnContainer {
+            width: 35px;
+            height: 35px;
+            background-color: #272826;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .inputContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .btnWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .cancelBtn,
+        .submitBtn {
+            font-size: 14px;
+        }
+
+        .cancelBtn {
+            text-decoration: none;
+            color: #b6d04c;
+        }
+
+        .submitBtn {
+            background-color: #434441;
+            border: none;
+            width: 70px;
+            border-radius: 10px;
+        }
+    }
+}

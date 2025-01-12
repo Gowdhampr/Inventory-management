@@ -1,0 +1,27 @@
+.DataTableContainer {
+    border: none;
+    border-radius: 8px !important;
+
+    .dataTable {
+        .disable {
+            filter: grayscale(1);
+            pointer-events: none;
+        }
+        th,
+        td {
+            padding: 20px 10px;
+        }
+        .tableHeader {
+            background-color: #161818;
+            padding: 10px;
+            border-radius: 8px;
+            color: #b6d04c;
+        }
+
+        .actionIconWrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+}

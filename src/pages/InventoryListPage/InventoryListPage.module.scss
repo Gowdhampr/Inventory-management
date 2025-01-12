@@ -1,0 +1,19 @@
+.listPageWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .statsCardContainer {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+//Small Screen only
+@media (max-width: 576px) {
+    .listPageWrapper {
+        .statsCardContainer {
+            flex-wrap: wrap;
+        }
+    }
+}

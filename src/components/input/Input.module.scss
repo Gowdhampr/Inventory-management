@@ -1,0 +1,14 @@
+.inputLabel {
+    color: #8f918f;
+}
+.inputField {
+    background-color: #3f413d !important;
+    color: #8f918f !important;
+    border-radius: 12px;
+
+    &:focus {
+        box-shadow: none !important;
+        background-color: #3f413d;
+        color: #8f918f;
+    }
+}

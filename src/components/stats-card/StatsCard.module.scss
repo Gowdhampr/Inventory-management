@@ -1,0 +1,44 @@
+.StatsCard {
+    width: 200px;
+    background-color: #243325;
+    border-radius: 8px;
+    padding: 10px 10px 0 10px;
+    gap: 10px;
+    color: white;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    max-width: 350px;
+
+    .iconWrapper {
+        svg {
+            width: 30px;
+            height: auto;
+            path {
+                fill: #ffffff;
+            }
+        }
+    }
+
+    .StatsCardContent {
+        display: flex;
+        flex-direction: column;
+
+        .label {
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .StatCount {
+            font-size: 44px;
+        }
+    }
+}
+
+//Small Screen only
+@media (max-width: 576px) {
+    .StatsCard {
+        width: 100%;
+        max-width: unset;
+    }
+}
