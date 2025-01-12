@@ -8,7 +8,6 @@
     display: flex;
     align-items: flex-start;
     width: 100%;
-    max-width: 350px;
 
     .iconWrapper {
         svg {
@@ -37,6 +36,5 @@
 @media (max-width: 576px) {
     .StatsCard {
         width: 100%;
-        max-width: unset;
     }
 }
